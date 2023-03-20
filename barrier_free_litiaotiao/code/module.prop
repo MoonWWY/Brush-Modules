@@ -1,0 +1,6 @@
+id=barrier_free_litiaotiao
+name=李跳跳2.2无障碍保活
+version=v2.2(230317)
+versionCode=230317
+author=酷安@哕哕吖
+description=保活策略：重启后将李跳跳转化为系统应用＋开机自启动李跳跳无障碍服务，用crond自动保活。
