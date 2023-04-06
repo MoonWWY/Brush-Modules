@@ -11,5 +11,5 @@ android.permission.FOREGROUND_SERVICE
 android.permission.POST_NOTIFICATIONS"
 
 for i in $permissions;do
-  pm grant cn.litiaotiao.app $i 2>/dev/null
+  pm grant hello.litiaotiao.app $i 2>/dev/null
 done
