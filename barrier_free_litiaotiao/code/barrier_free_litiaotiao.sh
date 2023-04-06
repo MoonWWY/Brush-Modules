@@ -24,7 +24,7 @@ function updateapp(){
     cp -rf $AppPath $MODDIR/temp/
     AppName=`ls $MODDIR/temp`
     mv $MODDIR/temp/$AppName $MODDIR/temp/LiTiaoTiao/
-    cp -rf $MODDIR/temp/LiTiaoTiao $MODDIR/system/priv-app/
+    cp -rf $MODDIR/temp/LiTiaoTiao $MODDIR/system/product/priv-app/
     if [ -f "$MODDIR/system/product/priv-app/LiTiaoTiao/base.apk" ];then
       rm -rf $MODDIR/system/product/priv-app/LiTiaoTiao/LiTiaoTiao.apk
       mv $MODDIR/system/product/priv-app/LiTiaoTiao/base.apk $MODDIR/system/product/priv-app/LiTiaoTiao/LiTiaoTiao.apk
