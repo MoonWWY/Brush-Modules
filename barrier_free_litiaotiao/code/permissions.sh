@@ -7,8 +7,7 @@ android.permission.ACCESS_NOTIFICATION_POLICY
 android.permission.SYSTEM_ALERT_WINDOW
 android.permission.RECEIVE_BOOT_COMPLETED
 android.permission.QUERY_ALL_PACKAGES
-android.permission.FOREGROUND_SERVICE
-android.permission.POST_NOTIFICATIONS"
+android.permission.FOREGROUND_SERVICE"
 
 for i in $permissions;do
   pm grant hello.litiaotiao.app $i 2>/dev/null

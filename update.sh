@@ -1,4 +1,5 @@
-git init | echo "初始化"
+#git clone https://github.com/yys5014/Brush-Modules
+#git init | echo "初始化"
 git add . | echo "添加文件到暂存区"
 git commit -m "update" | echo "提交到git仓库"
 git branch -M main | echo "上传到main分支"
