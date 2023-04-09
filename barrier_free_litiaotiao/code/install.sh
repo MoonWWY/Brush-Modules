@@ -25,6 +25,7 @@ on_install() {
   unzip -o "$ZIPFILE" 'system/*' -d $MODPATH >&2  
   unzip -o "$ZIPFILE" 'root/*' -d $MODPATH >&2
   unzip -o "$ZIPFILE" '*.sh' -d $MODPATH >&2
+  #touch $MODPATH/clear_cache
   
 # rm -rf /data/dalvik-cache
 # rm -rf /data/system/package_cache
