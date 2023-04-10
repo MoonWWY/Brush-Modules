@@ -4,4 +4,5 @@ version=v4.5(230309)
 versionCode=230309
 author=酷安@哕哕吖
 description=淦掉云控：[ -等待重启- ] 不跳电淦温控，满血快充(会阶梯式充电，也会受机身48℃温度墙影响)，游戏不掉帧，兼容A12/A13，MIUI13/MIUI14。安装日期：[ -未安装- ] | 使用时长：[ -未安装- ]
-updatejson=https://github.com/yys5014/Brush-Modules/raw/main/Mi12_TemperatureControl/Mi12_TemperatureControl.json
+#updatejson=https://github.com/yys5014/Brush-Modules/raw/main/mod/Mi12_TemperatureControl.json
+updatejson=https://share.yyycontrol.top/d/updatemod/Mi12_TemperatureControl.json
