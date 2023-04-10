@@ -4,19 +4,19 @@
 
 <p>1.barrier_free_litiaotiao</p>
 <p>李跳跳2.2无障碍保活</p>
-<p>updatejson=https://github.com/yys5014/Brush-Modules/raw/main/barrier_free_litiaotiao.json</p>
+<p>updatejson=https://github.com/yys5014/Brush-Modules/raw/main/barrier_free_litiaotiao/barrier_free_litiaotiao.json</p>
 
 <br />
 
 <p>2.Mi12_temperature_wall</p>
 <p>小米12 CPU-GPU温度墙</p>
-<p>updatejson=https://github.com/yys5014/Brush-Modules/raw/main/Mi12_temperature_wall.json</p>
+<p>updatejson=https://github.com/yys5014/Brush-Modules/raw/main/Mi12_temperature_wall/Mi12_temperature_wall.json</p>
 
 <br />
 
 <p>3.Mi12_TemperatureControl</p>
 <p>Mi·淦掉温控</p>
-<p>updatejson=https://github.com/yys5014/Brush-Modules/raw/main/Mi12_TemperatureControl.json</p>
+<p>updatejson=https://github.com/yys5014/Brush-Modules/raw/main/Mi12_TemperatureControl/Mi12_TemperatureControl.json</p>
 
 <hr />
 
