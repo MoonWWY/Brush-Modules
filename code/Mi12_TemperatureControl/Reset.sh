@@ -1,6 +1,5 @@
 #!/system/bin/sh
 MODDIR=${0%/*}
-#重置淦云控时间集合
 Cache=/storage/emulated/0/Android/Mi12_TemperatureControl/Cache
 rm -rf $Cache
 mkdir -p $Cache

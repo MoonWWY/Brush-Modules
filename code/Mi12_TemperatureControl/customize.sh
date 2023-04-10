@@ -1,19 +1,13 @@
 #!/system/bin/sh
-#是否安装模块后自动关闭，改为true，安装后不会自动勾选启用
 SKIPMOUNT=false
-#是否使用common/system.prop文件
 PROPFILE=true
-#是否使用post-fs-data脚本执行文件
 POSTFSDATA=false
-#是否在开机时候允许允许common/service.sh中脚本
 LATESTARTSERVICE=true
 DUBUG_FLAG=true
 SKIPUNZIP=0
 ASH_STANDALONE=0
 
-#模块信息
 function Information() {
-#grep_prop从文件中获取参数
 name="`grep_prop name $TMPDIR/module.prop`"
 version="`grep_prop version $TMPDIR/module.prop`"
 author="`grep_prop author $TMPDIR/module.prop`"
@@ -27,13 +21,9 @@ ui_print "- $description"
 ui_print "********************"
 }
 
-#安装询问，限制安装
 function Ifff() {
-#获取设备代号
 model=$(getprop ro.product.model)
-#获取安卓版本
 a_version=$(getprop ro.build.version.release)
-#获取系统版本
 lastVersion=$(getprop ro.build.version.incremental)
 ui_print "————————————————————————————————————"
 ui_print "- 温馨提醒："
@@ -58,7 +48,6 @@ ui_print "———————————————————————�
 volume=1
 action=1
 ui_print "- 请根据提示按音量键进行选择！"
-#获取音量键参数，做选择
 while [ $volume == 1 ]; do
   action=`getevent -lqc 1`
   if [[ "${action}" == "*KEY_VOLUMEUP*" ]];then 
@@ -74,15 +63,12 @@ while [ $volume == 1 ]; do
   fi
 done
 }
-#安装模块函数
 function Install() {
 sleep 0.5
 ui_print "- Install~"
 
-#备份云控数据
 ui_print "- 🚙备份温控文件"
 Config_add=/storage/emulated/0/Android/Mi12_TemperatureControl
-#判断目录是否存在，采取第一次/日期方式备份云控温控文件。备份会导致跳电的温控文件
 First_install_bak=${Config_add}/First_install_bak
 Jump_thermals="/system/vendor/bin/mi_thermald
 /system/vendor/etc/thermal-engine.conf
@@ -105,7 +91,6 @@ if [ ! -d "$First_install_bak" ]; then
 fi
 
 ui_print "- 💞初始化模块文件"
-#创建busybox目录，避免无命令，或者命令冲突。
 function install_magisk_busybox() {
 mkdir -p /data/adb/busybox
 	/data/adb/magisk/busybox --install -s /data/adb/busybox
@@ -113,26 +98,21 @@ mkdir -p /data/adb/busybox
 export PATH=/data/adb/busybox:$PATH
 }
 install_magisk_busybox 2>/dev/null
-#模块缓存目录
 Cache=/storage/emulated/0/Android/Mi12_TemperatureControl/Cache
-#初始化时间集参数
 mkdir -p $Cache
 echo "1200
 1800">>$Cache/Caches
 echo "1200
 1800">>$Cache/Latest
 echo "1200">$Cache/Latest1
-#创建定时任务目录文件
 mkdir -p $MODPATH/root
 echo "#每20分钟执行一次I_Control.sh，淦云控
 */20 * * * * sh /data/adb/modules/Mi12_TemperatureControl/I_Control.sh">$MODPATH/root/root
-#通过拷贝出错文件到模块挂载system目录下，解决NFC等问题
 product=$MODPATH/system/product
 if [ ! -d "$product" ]; then
   mkdir -p ${product}
   cp -p -a -R /system/product/pangu/system/* ${product}
 fi
-#统计模块安装时间
 Install_time=`date +"%Y.%m.%d %H:%M:%S"`
 echo "$Install_time">$Config_add/Install_time
 echo "$Install_time">$MODPATH/Install_time
@@ -146,7 +126,6 @@ ui_print "- ✍🏻️写入温控文件"
 /system/bin/sh $MODPATH/I_Control.sh >/dev/null 2>&1 &
 
 ui_print "- 🐾尝试清除缓存，修复异常"
-#清理缓存
 cache_path=/data/dalvik-cache/arm
 [ -d $cache_path"64" ] && cache_path=$cache_path"64"
 for fileName in $system_ext_cache; do
@@ -158,11 +137,9 @@ for fileName in $system_cache; do
   rm -f /data/system/package_cache/*/"$fileName"*
 done
 
-#设置权限
 ui_print "- 👾设置权限"
 set_perm_recursive $MODPATH 0 0 0755 0644
 }
-#调用函数
 Information
 Ifff
 Install

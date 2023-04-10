@@ -1,7 +1,7 @@
 id=Mi12_TemperatureControl
 name=Mi·淦掉温控
-version=v4.5(230309)
-versionCode=230309
+version=v4.5(230310)
+versionCode=230310
 author=酷安@哕哕吖
 description=淦掉云控：[ -等待重启- ] 不跳电淦温控，满血快充(会阶梯式充电，也会受机身48℃温度墙影响)，游戏不掉帧，兼容A12/A13，MIUI13/MIUI14。安装日期：[ -未安装- ] | 使用时长：[ -未安装- ]
 #updatejson=https://github.com/yys5014/Brush-Modules/raw/main/mod/Mi12_TemperatureControl.json
