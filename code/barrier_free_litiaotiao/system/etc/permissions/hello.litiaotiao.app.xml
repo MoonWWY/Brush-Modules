@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
-<permissions>
-<allow-in-power-save package="hello.litiaotiao.app" />
-<system-user-whitelisted-app package="hello.litiaotiao.app" />
-</permissions>
-
